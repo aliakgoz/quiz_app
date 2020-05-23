@@ -8,6 +8,11 @@ void main() => runApp(MyApp());
 
 // extends uses another (prebuilt) class blueprint and if you want you can add properties to it.
 class MyApp extends StatelessWidget {
+  void answerQuestion() {
+    print('Answer chosen!');
+  }
+
+
   @override
   Widget build(BuildContext context) {
     var questions = [
@@ -24,15 +29,15 @@ class MyApp extends StatelessWidget {
             Text('The Question!'),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: answerQuestion,
             ),
           ],
         ),
