@@ -25,7 +25,9 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            Text('The Question!'),
+            Text(
+              questions.elementAt(0),
+            ),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion,
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
             ),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: (){
+              onPressed: () {
                 //anonymous function
                 print('Answer 3 chosen');
               },
