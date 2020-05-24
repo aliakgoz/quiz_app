@@ -8,23 +8,21 @@ void main() => runApp(MyApp());
 
 // extends uses another (prebuilt) class blueprint and if you want you can add properties to it.
 class MyApp extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return MyAppState();
+    return _MyAppState();
   }
-
 }
 
-class MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> {
   var questionIndex = 0;
 
   void answerQuestion() {
     setState(() {
       questionIndex = questionIndex + 1;
     });
-    
+
     print(questionIndex);
   }
 
