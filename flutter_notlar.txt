@@ -1,0 +1,13 @@
+Flutter Notlarım:
+
+1. .idea klasörü: Android studio için bazı configurationları içeriyor.
+2. .vscode: Visual studio code için configurationlarını içerir.
+3. android klasörü: Yaptığımız programın android versiyonunu içeren
+    klasör. 
+4. build klasörü: flutterın build için kullandığı klasör.
+5. IOS klasörü: Yaptığımız programın IOS versiyonunu içerir.
+6. lib klasörü: bizim ürettiğimiz dosyaları içeren ana klasör.
+7. .gitignore: git ayarlarını içeren dosya.
+8. pubspec.yaml: dependencies i manage etmek için kullanılır.
+                font ve images i yönetmek için de kullanılır.
+

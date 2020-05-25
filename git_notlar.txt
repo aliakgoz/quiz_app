@@ -1,0 +1,15 @@
+1. git ve github birbirinden farklıdır.
+2. git local olarak versiyon management yaparken github online olarak
+   versiyon kontrolü yapıyor.
+3. PUSH ====> git ten github a göndermek
+4. REPOSITORY ====> the location where your code history is stored.
+5. BRANCH ====> commitleri içeren klasör olarak düşünülebilir.
+6. COMMITS ====> Yazdığımız Code un farklı versiyonları.
+
+7. git init ====> boş bir repository oluşturur.
+8. git status ====> repository durumunu gösterir. 
+9. git add . ====> klasördeki tüm dosyaları takip sistemine alır.
+10. git commit -m "commit name" ====> versiyon oluşturur.
+11. git branch ====> branchları gösterir.
+12.  git log ====> git in yaptığı işlemleri gösterir (q ile çıkılır)
+13. 
