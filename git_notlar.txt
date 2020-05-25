@@ -12,4 +12,9 @@
 10. git commit -m "commit name" ====> versiyon oluşturur.
 11. git branch ====> branchları gösterir.
 12.  git log ====> git in yaptığı işlemleri gösterir (q ile çıkılır)
-13. 
+13. git checkout COMMIT_ID ====> daha önceki bir commite bakmak için kullanılır.
+14. git master ====> last commit e gider.
+15. git reset --hard COMMIT_ID ====>  daha önceki commite kesin dönüş yapmak için kullanılır.
+16. git checkout -- . ====> güncel commite geri döner. 
+17. git checkout -b BRANCH_NAME ====> yeni branch yapmak için.
+18. git checkout BRANCH_NAME ====> branch değiştirmek için.
