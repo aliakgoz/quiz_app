@@ -150,7 +150,7 @@ void main() {
 }
 
 24. Building an App from scratch
-flutter tamamen widget lerden oluşur.
+1. flutter tamamen widget lerden oluşur.
 aslında bir widget ağacı demek daha doğru olur.
 bir widget objesi oluşturuyoruz: MyApp.
 
@@ -172,7 +172,7 @@ class MyApp extends StatelessWidget {
 
 }
 
-25. her sınıfın içinde bir build metodu oluşturmamız gerek.
+2. her sınıfın içinde bir build metodu oluşturmamız gerek.
 class ların içindeki function lara method diyoruz.
 build i BuildContext context argument i ile kullanıyoruz. Bu ilerde
 işimize yarayabilir şimdi bir işimiz yok.
@@ -192,7 +192,7 @@ class MyApp extends StatelessWidget {
 
 }
 
-26. MaterialApp bir çok argument i içerir.
+3. MaterialApp bir çok argument i içerir.
   home: argument i programın anasayfasını içeren widget i gösterir.
   Şimdilik bir Text widgeti kullanacağız.
   ekranda birşeyler görebilmek için runApp(); eklememiz gerekiyor.
@@ -215,4 +215,86 @@ void main() {
 
 }
 
-27. 
+26. Ders - Class Constructors & Named Arguments
+
+1. sınıflardan obje oluştururken özelliklere değer verebiliriz.
+mesela Person('Max', 30)
+ama bunun için bir constructor oluşturmamız gerekir.
+constructor class içerisinde bir methoddur (yani fonksiyon).
+İlgili class tan bir obje oluşturulduğu zaman bir defa çalışır.
+yani her obje için constructor bir defa çalışır.
+Constructor ın isminin class ismi ile aynı olması gerekir.
+this kelimesi class level variable lara ulaşmak için kullanılır.
+
+
+class Person {
+  String name;
+  int age;
+
+  Person(String inputName, int inputAge) {
+    this.name = inputName
+    this.age = inputAge
+  }
+}
+
+double addNumbers(double num1, double num2) {
+  //print(num1 + num2);
+  return num1+num2;
+}
+
+void main() {
+    var p1 = Person('Max', 30);
+    var p2 = Person('Manu', 31);
+    p2.name = 'Manu';
+    String name = 'Max';
+    int age = 30;
+    var firstResult = addNumbers(1, 2.6);
+    print(firstResult + 1)
+}
+
+2. Named Arguments
+named argument kullanmak için constructor içinde argumentleri
+{} içinde vermemiz gerekir. named argument kullanırsak sıralamanın
+önemi kalmaz ama obje çağırılırken argument isimlerini
+ kullanmak daha iyi olur.
+ Person({String inputName, int inputAge}) {}
+
+class Person {
+  String name;
+  int age;
+
+  Person({String inputName, int inputAge}) {
+    this.name = inputName
+    this.age = inputAge
+  }
+}
+
+2. @required :
+bu ifadeyi constructor içerisinde bir argumentin önüne koyarsak
+o argument girilmeden objenin oluşamayacağını söylemiş oluruz.
+Daha sonra o argument girilmeden o obje oluşturulmaya çalışıldığında
+flutter hata verecektir.
+Örnek Person({@required String inputName, int inputAge}) {}
+
+3. constructor ı kısaltmek için aşağıdaki gibi de yazabiliriz.
+ama bunun için class level variable ları argument olarak girmemiz 
+gerekir. (this yardımıyla)
+Person({this.name, this.age});
+
+27. Ders - First Summary & Additional Syntax
+
+1. runApp içine girilen objenin (burada MyApp) build
+methodunu çalıştırır.
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+  class MyApp extends StatelessWidget {
+  Widget build(BuildContext context){
+    return MaterialApp(home: Text('Hello!'),);
+  }
+
+}
