@@ -11,3 +11,208 @@ Flutter Notlarım:
 8. pubspec.yaml: dependencies i manage etmek için kullanılır.
                 font ve images i yönetmek için de kullanılır.
 
+Ders 21. Dart Basics
+void main() {
+    for (int i =0; i < 5; i++) {
+        print('hello ${i + 1}');
+    }
+}
+
+1. app başladığı zaman dart otomatik olarak main() function ını 
+çalıştırıyor.
+
+addNumbers(num1, num2) {
+  
+}
+
+2. addNumbers ı çalıştırmak için 
+
+void main() {
+    addNumbers(1, 2)
+}
+
+3. fonksiyonun içini dolduralım 
+
+addNumbers(num1, num2) {
+  num1 + num2;
+}
+
+4. yukarıdaki fonksiyonun herhangi bir çıkışı yok.
+  şimdi ise ekranda verdiğimiz iki sayının toplamını
+  görürüz.
+
+addNumbers(num1, num2) {
+  print(num1 + num2);
+}
+
+5. Dart değişkenlerin type larını vermemiz gereken bir programlama
+dilidir.
+
+addNumbers(int num1, int num2) {
+  print(num1 + num2);
+}
+
+addNumbers(double num1, double num2) {
+  print(num1 + num2);
+}
+
+6. fonksiyonların da tipini belirtmemiz gerekir. şu durumda void
+çünkü bir return yok.
+
+void addNumbers(double num1, double num2) {
+  print(num1 + num2);
+}
+
+7. void olmadığı durumda tipini vermemiz gerekir.
+
+double addNumbers(double num1, double num2) {
+  //print(num1 + num2);
+  return num1+num2;
+}
+
+Ders 22 - More Dart Basics
+
+1. Variables
+variableları tanıtırken tipini vermemiz gerekir.
+
+double addNumbers(double num1, double num2) {
+  //print(num1 + num2);
+  return num1+num2;
+}
+
+void main() {
+    var firstResult = addNumbers(1, 2.6);
+    print(firstResult + 1)
+}
+
+2. var tipi ne demek?
+    Dart ta type inference özelliği var. yani var kullanırsak
+    eşitliğin diğer tarafındaki şeyin type ında bir variable 
+    oluşturmuş oluruz.
+
+3. eğer variable ı kullanmadan önce oluşturacaksak o zaman
+  aşağıdaki gibi beklediğimiz tipi vererek oluşturabiliriz.
+
+ void main() {
+    double firstResult;
+    firstResult = addNumbers(1, 2.6);
+    print(firstResult + 1)
+}
+ 
+4. Object Oriented Programming (OOP)
+
+Örnek: aşağıda ayrı ayrı isim ve yaş değişkenleri tanımladık.
+Eğer bu şekilde çok girdimiz olacaksa, o zaman bunu yaş ı ve 
+ismi bulunan bir objeye dönüştürmemiz daha verimli olur.
+
+double addNumbers(double num1, double num2) {
+  //print(num1 + num2);
+  return num1+num2;
+}
+
+void main() {
+    String name = 'Max';
+    int age = 30;
+    var firstResult = addNumbers(1, 2.6);
+    print(firstResult + 1)
+}
+
+5. (OOP) Person objesi sınıfının iki property si var.
+property = variable in class
+aşağıda iki özellik (property) verdiğimiz Person objesini
+oluşturduk.
+p1 i person objesi olarak oluşturduk.
+iki özellği (property)
+p1.name  
+p1.age
+
+p2 i person objesi olarak oluşturduk.
+p2.name = 'Manu' diyerek onun adını değiştirdik.
+
+class Person {
+  String name = 'Max';
+  int age = 30;
+}
+
+double addNumbers(double num1, double num2) {
+  //print(num1 + num2);
+  return num1+num2;
+}
+
+void main() {
+    var p1 = Person();
+    var p2 = Person();
+    p2.name = 'Manu';
+    String name = 'Max';
+    int age = 30;
+    var firstResult = addNumbers(1, 2.6);
+    print(firstResult + 1)
+}
+
+24. Building an App from scratch
+flutter tamamen widget lerden oluşur.
+aslında bir widget ağacı demek daha doğru olur.
+bir widget objesi oluşturuyoruz: MyApp.
+
+MyApp özelliklerini bir daha önce oluşturulmuş başka bir sınıftan
+devşirecek. Bunu yapmak için extends kelimesini kullanacağız.
+Daha sonra parantez içinde {} bu sınıf için kendi istediğimiz
+özelleştirmeleri yazacağız.
+Bunun için o sınıfın içinde olduğu kütüphaneyi import etmemiz
+gerekiyor.
+
+import 'package:flutter/material.dart';
+
+void main() {
+
+}
+
+class MyApp extends StatelessWidget {
+
+
+}
+
+25. her sınıfın içinde bir build metodu oluşturmamız gerek.
+class ların içindeki function lara method diyoruz.
+build i BuildContext context argument i ile kullanıyoruz. Bu ilerde
+işimize yarayabilir şimdi bir işimiz yok.
+build methodu bir widget return edecek.
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+
+}
+
+class MyApp extends StatelessWidget {
+  Widget build(BuildContext context){
+    return MaterialApp();
+  }
+
+}
+
+26. MaterialApp bir çok argument i içerir.
+  home: argument i programın anasayfasını içeren widget i gösterir.
+  Şimdilik bir Text widgeti kullanacağız.
+  ekranda birşeyler görebilmek için runApp(); eklememiz gerekiyor.
+  runApp( )  e argument olarak ana widgetimizi vermemiz gerekiyor.
+  runApp(MyApp()) burada MyApp sonrasında parantez () olmazsa
+  type olarak vermiş oluruz. Objenin kendisini vermek için parantez
+  kullanıyoruz.
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+  class MyApp extends StatelessWidget {
+  Widget build(BuildContext context){
+    return MaterialApp(home: Text('Hello!'),);
+  }
+
+}
+
+27. 
