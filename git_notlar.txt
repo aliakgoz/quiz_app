@@ -18,3 +18,7 @@
 16. git checkout -- . ====> güncel commite geri döner. 
 17. git checkout -b BRANCH_NAME ====> yeni branch yapmak için.
 18. git checkout BRANCH_NAME ====> branch değiştirmek için.
+19. git merge BRANCH_NAME ====> master dan basılması gerekir. Branchı master ile birleştirir.
+20. git branch -D BRANCH_NAME ====> branch ı silmek için kullanılır.
+21. git push ===> değişiklikleri github a gönderiyor.
+22. git pull ===> github la sync yapıyor.
