@@ -283,8 +283,10 @@ Person({this.name, this.age});
 
 27. Ders - First Summary & Additional Syntax
 
-1. runApp içine girilen objenin (burada MyApp) build
+1. main() app çalıştığı zaman ilk çalışan şey 
+runApp içine girilen objenin (burada MyApp) build
 methodunu çalıştırır.
+
 
 import 'package:flutter/material.dart';
 
@@ -298,3 +300,77 @@ void main() {
   }
 
 }
+
+2. Flutter da tüm widgetler ya StatelessWidget ya da 
+Stateful widget dır.
+Tüm widget lar aslında bir Dart class ıdır ve içlerinde
+bir tane build methodu bulunur.
+@override : aslında buna gerek yok. bu bir decorator.
+daha önce tanımlanmış olan bir class a extend yapılıyorsa
+override otomatik olarak yapılıyor. ama bu override ı 
+bilerek yaptığımızı göstermek için konuluyor.
+
+3. aşağıdaki iki ifade aynı şeyi gösteriyor. 
+ikincisi sadece bir kısaltma.
+
+void main() {
+  runApp(MyApp());
+}
+
+void main() => runApp(MyApp());
+
+28. Ders - Building a Widget Tree
+
+1. Flutter ekrandaki tüm pikselleri kontrol eder.
+Tüm widget tree yi içerecek bir kalıp widgetidir.
+CTRL + Space ile argumentleri incelenebilir.
+Tüm widgetların sonuna virgül koyarsak auto formatting
+daha iyi çalışır. (Shift + Alt + F)
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+  class MyApp extends StatelessWidget {
+  Widget build(BuildContext context){
+    return MaterialApp(home: Scaffold(
+      appBar: AppBar(title: Text('My First App'),),
+      body: Text('This is my default text!'),
+    ),);
+  }
+
+}
+
+2. şimdi body e daha fazla widget ekleyeceğiz.
+bunun için column, row, listview tarzı widgetlar 
+kullanmamız lazım. Bunlar bir widget listesi alabiliyorlar.
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+  class MyApp extends StatelessWidget {
+  Widget build(BuildContext context){
+    var questions = ['What\'s your favorite color?',
+                     'What\'s your favorite animal?'];
+
+    return MaterialApp(home: Scaffold(
+      appBar: AppBar(title: Text('My First App'),),
+      body: Column(children: <Widget> [Text('This is my default text!'),
+                                       RaisedButton(child: Text('Answer 1'), onPressed: null,),
+                                       RaisedButton(child: Text('Answer 2'), onPressed: null,),
+                                       RaisedButton(child: Text('Answer 3'), onPressed: null,),                                     
+                                       
+                                        ]), 
+
+    ),);
+  }
+
+}
+
+3. onPressed: null button ı disabled yapıyor.
