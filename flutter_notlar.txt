@@ -373,4 +373,22 @@ void main() {
 
 }
 
-3. onPressed: null button ı disabled yapıyor.
+3. onPressed: null button ı disabled yapıyor. 
+onPressed bir function istiyor. bir widget değil.
+Genel olarak widget ta kullanılan function ları
+aynı class ın içinde yazmak daha doğru olur.
+onPressed e functionları verirken () parantez
+kullanmıyoruz. Eğer parantez kullanırsak 
+koyduğumuz function ın return değerini onPressed e
+veriyoruz demek. 
+
+  void _answerQuestion() {
+   
+    print('answer chosen!');
+  }
+
+
+RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: answerQuestion,
+            ),

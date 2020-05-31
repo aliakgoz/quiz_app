@@ -22,4 +22,3 @@
 20. git branch -D BRANCH_NAME ====> branch ı silmek için kullanılır.
 21. git push ===> değişiklikleri github a gönderiyor.
 22. git pull ===> github la sync yapıyor.
-deneme
