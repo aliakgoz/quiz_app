@@ -392,3 +392,41 @@ RaisedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion,
             ),
+
+4. onPressed için bir başka alternatif ise
+oraya anonymous bir function yapmak
+aşağıdaki gibi:
+
+   RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: () {
+                //anonymous function
+                print('Answer 3 chosen');
+              },
+            ),
+
+Veya onun kısaltılmış versiyonu:
+    RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: () => print('Answer 2 chosen'),
+            ),
+
+
+5. variable tanıtırken mesela liste build methodun
+içinde tanıtmak iyi değil çünkü build method birden
+fazla kere çalışabilir. Bu yüzden class level variable
+kullanmak daha mantıklı. Aşağıdaki questionIndex 
+variable ı gibi:
+
+class MyApp extends StatelessWidget {
+  var questionIndex = 0;
+
+35. Ders - Updating Correctly with Stateful Widgets
+State 
+App State olabilir,
+Widget State olabilir
+
+StatelessWidget lar state sahibi olamaz.
+StatefulWidget lar state sahibi olabilir ve 
+dinamik bir şekilde değiştirilebilir.
+
