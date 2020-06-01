@@ -430,3 +430,60 @@ StatelessWidget lar state sahibi olamaz.
 StatefulWidget lar state sahibi olabilir ve 
 dinamik bir şekilde değiştirilebilir.
 
+StatelessWidget input data değiştiği zaman
+render leniyor.
+
+StatefulWidget ise hem input data değiştiğinde
+hemde internal state değiştiğinde değişir.
+
+StatefulWidget iki class tan oluşur.
+ilk class MyApp extends StatefulWidget {}
+ikincisi class MyAppState extends State<MyApp> {}
+
+niye iki class a ihtiyacımız var?
+ikinci class state i hafızada tutmak için
+işe yarıyor.
+
+iki class ın arasındaki bağlantı aşağıdaki
+iki aşamada kuruluyor.
+1. ikinci class a <MyApp> ekliyoruz.
+2. birinci class a 
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+
+  ekliyoruz.
+
+  build method u state class ında (ikinci)
+  olacak. Çünk build method tarafından
+  kullanılan data state class ının içinde.
+
+  3. ikinci class a state in ne zaman
+  değişeceğini söylememiz gerekiyor. 
+  setState methodunu kullanarak
+  hangi durumda yeniden render gerektiğini
+  belirtiyoruz.
+
+  class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
+
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
+
+    print(_questionIndex);
+  }
+
+  ***** setState ne yapıyor???
+  içinde bulunduğu class ın build methodunu
+  yeniden çalıştırıyor.
+  Tüm app ı baştan çalıştırmıyor. Kısmi olarak
+  güncelliyor yani.
+  Build method ise o kısmı baştan yeniden
+   oluşturuyor. Build method sadece değişen
+   bilgileri ekranda yeniliyor. (efficient yani)
+   
+
