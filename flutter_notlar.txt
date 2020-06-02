@@ -586,3 +586,64 @@ border görülebilir, renk verilebilir vs.
 Decoration ile border koyma örneği:
 
 decoration: BoxDecoration(border: Border.all(color: Colors.blueGrey, width: 3,)),
+
+#################################################
+nokta ile farklı constructorlar oluşturulabilir.
+
+örnek :
+Person({this.name,this.age=30});
+
+Person.veryOld(this.name){
+  age=60
+}
+
+bunu çağırırken
+
+p3 = Person.veryOld('Max');
+gibi çağırıyoruz.
+
+
+############################
+WIDGET CATALOG
+https://flutter.dev/docs/development/ui/widgets
+
+***
+Main dart tan başka bir dosyaya function geçirme
+
+main.dart:
+Answer(_answerQuestion),
+answer.dart:
+class Answer extends StatelessWidget {
+  final Function selectHandler;
+
+  Answer(this.selectHandler);
+
+selectHandler variable ımız _answerquestion ı 
+çağırmak için kullanılıyor.
+
+#####
+Map() {} yada  {
+        'questionText': 'What\'s your favorite color?',
+        'answers': ['Black', 'Red', 'Green', 'White']
+      },
+bir çeşit kütüphane gibi çalışıyor.
+
+Daha sonra ulaşmak için:
+questions[_questionIndex]['questionText']
+
+#### 
+3. nokta operatörü (...) 
+başına konduğu listedeki tüm elemanları 
+içinde bulunduğu listeye açıyor.
+
+Örnek:
+['x',...['a','b','c']]=['x','a','b','c']
+
+******************************
+final vs const
+
+final aslında dinamik ama ilgili class bir kere
+oluşturulduğunda kitleniyor ve değişmiyor.
+
+const ise compile edildikten sonra değişmeyen
+şeyler için.
