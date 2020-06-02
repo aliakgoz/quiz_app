@@ -485,5 +485,104 @@ iki aşamada kuruluyor.
   Build method ise o kısmı baştan yeniden
    oluşturuyor. Build method sadece değişen
    bilgileri ekranda yeniliyor. (efficient yani)
-   
 
+37. Ders - Using Private Properties
+
+1. Flutter da farklı dosyalar birbiriyle import
+vasıtasıyla haberleşir. 
+
+Eğer bir class a başka bir dosyadan erişilmesini
+engellemek istiyorsak class isminin başına '_' 
+karakterini koyuyoruz.
+Örnek:
+başka dosyadan erişilebilen class (public)
+class MyAppState extends State<MyApp> {}
+başka dosyadan erişilemeyen class (private)
+class _MyAppState extends State<MyApp> {}
+
+variable ların başına getirildiğinde 
+ilgili variable a yalnızca kendi dosyasından
+ulaşılabilir. 
+Farklı classlardan yine de ulaşılabiliyor (sanırım)
+
+********** Input Data ne demek??? Ders 38
+
+Genel olarak her dosyada bir widget olması iyi bir 
+kullanım. Yani bir widget class ı ve onun state i.
+
+input data kullanmak için constructor kullanıyoruz.
+örnek:
+
+  final String questionText;
+  // constructor
+  Question(this.questionText);
+
+bu şekilde şunu söylemiş oluyoruz. herhangi bir yerden
+Question class ına ait bir obje oluşturulduğunda yani
+Question class ı çağırıldığında, bir argument isteyecek
+bu argument i biz questionText olarak kaydediyoruz ve
+class içinde işliyoruz.
+
+Dışarıdan çağırmaya örnek:
+
+children: <Widget>[
+            Question(
+              questions[_questionIndex],
+            ),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: _answerQuestion,
+            ),
+
+Bu şekilde kendimiz bir Question widget ı oluşturmuş
+oluyoruz.
+
+Eğer bir variable ın değerinin değişmesini istemiyorsak
+başına final getiriyoruz.
+
+değiştirilebilir variable:
+String questionText;
+
+değiştirilemez variable:
+final String questionText;
+
+***************************************************
+***************************************************
+************* STYLING & LAYOUT ********************
+
+TextAlign  yazıyı ortalamak için:
+
+textAlign: TextAlign.center,
+
+Font değiştirmek için:
+
+style: TextStyle(fontSize: 28),
+
+Text i ekranda ortalamak için başka bir şeyin
+içine koymak gerekiyor.
+
+Container mesela
+
+bir text i container içine almak için kısayol:
+CTRL + .
+
+width: double.infinity,
+
+container ın kullanabileceği tüm width i kullanmasını
+sağlar.
+
+margin container ın dış etrafına olan boşlukları 
+belirler:
+
+margin: EdgeInsets.all(10),
+
+padding container ın iç etrafına olan boşlukları
+belirler:
+
+padding: ,
+
+margin ile padding arasında border olur,
+border görülebilir, renk verilebilir vs.
+Decoration ile border koyma örneği:
+
+decoration: BoxDecoration(border: Border.all(color: Colors.blueGrey, width: 3,)),
