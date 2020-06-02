@@ -647,3 +647,25 @@ oluşturulduğunda kitleniyor ve değişmiyor.
 
 const ise compile edildikten sonra değişmeyen
 şeyler için.
+
+***********************************
+if (userName == 'Max' && password == 'tester') {
+  print('logged in!');
+} else if {
+  print('failed!');
+} else {
+  print('adsdasd');
+}
+
+alternatif gösterim:
+
+userName == 'Max' && password == 'tester' ?  print('logged in!'); : print('adsdasd');
+
+|| or :
+&& and :
+!= not equal:
+== equal
+
+if (username != null) {
+  //...
+}
