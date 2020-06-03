@@ -10,7 +10,11 @@ class Question extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.all(10),
-      decoration: BoxDecoration(border: Border.all(color: Colors.blueGrey, width: 3,)),
+      decoration: BoxDecoration(
+          border: Border.all(
+        color: Colors.blueGrey,
+        width: 3,
+      )),
       child: Text(
         questionText,
         style: TextStyle(fontSize: 28),
